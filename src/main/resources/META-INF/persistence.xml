@@ -1,0 +1,47 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.1">
+
+    <persistence-unit name="myPU" transaction-type="RESOURCE_LOCAL">
+        <!-- Hibernate Provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+        <class>com.training.Employee</class>
+        <class>com.training.Department</class>
+        <properties>
+
+            <!-- PostgreSQL JDBC Driver -->
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="org.postgresql.Driver"/>
+
+            <!-- Database URL (PORT 5432) -->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:postgresql://localhost:5432/Employee"/>
+
+            <!-- Username -->
+            <property name="jakarta.persistence.jdbc.user"
+                      value="postgres"/>
+
+            <!-- Password -->
+            <property name="jakarta.persistence.jdbc.password"
+                      value="krish"/>
+
+            <!-- Hibernate Dialect -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.PostgreSQLDialect"/>
+
+            <!-- Auto create/update tables -->
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/>
+
+            <!-- Show SQL
+            <property name="hibernate.show_sql"
+                      value="true"/>
+
+            <property name="hibernate.format_sql"
+                      value="true"/> -->
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
